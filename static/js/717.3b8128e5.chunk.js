@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkgoit_react_hw_08_phonebook=self.webpackChunkgoit_react_hw_08_phonebook||[]).push([[717],{717:function(o,e,t){t.r(e);var a=t(184);e.default=function(){return(0,a.jsxs)(a.Fragment,{children:[(0,a.jsx)("h2",{children:"You can save you phonebook here"}),(0,a.jsx)("img",{alt:"book",src:"https://images.unsplash.com/photo-1506513083865-434a8a207e11?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"})]})}}}]);
+//# sourceMappingURL=717.3b8128e5.chunk.js.map
