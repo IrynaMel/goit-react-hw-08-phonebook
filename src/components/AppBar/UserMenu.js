@@ -7,7 +7,7 @@ import Button from '@mui/material/Button';
 export const UserMenu = () => {
   const dispatch = useDispatch();
 
-  // const name = useSelector(state => state.auth.user.name);
+  const name = useSelector(state => state.auth.user.name);
 
   const handlerLogOut = e => {
     e.preventDefault();
@@ -17,7 +17,7 @@ export const UserMenu = () => {
   return (
     <Div>
       <Link to="contacts"> Contacts</Link>
-      {/* <Name>{name}</Name> */}
+      <Name>{name}</Name>
       <div>
         <Button
           variant="contained"
