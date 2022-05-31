@@ -5,7 +5,7 @@ import authOperations from '../redux/auth/auth-operations';
 import Button from '@mui/material/Button';
 // import Div from 'components/AppBar/AppBar.styled'
 
-export const LogInView = () => {
+const LogInView = () => {
   const dispatch = useDispatch();
 
   const [email, setEmail] = useState('');
@@ -61,3 +61,4 @@ export const LogInView = () => {
     </div>
   );
 };
+export default LogInView;

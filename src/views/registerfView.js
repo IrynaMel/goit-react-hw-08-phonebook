@@ -4,7 +4,7 @@ import authOperations from '../redux/auth/auth-operations';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 
-export const RegisterView = () => {
+const RegisterView = () => {
   const dispatch = useDispatch();
 
   const [name, setName] = useState('');
@@ -69,3 +69,5 @@ export const RegisterView = () => {
     </div>
   );
 };
+
+export default RegisterView;
