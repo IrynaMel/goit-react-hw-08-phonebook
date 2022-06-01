@@ -1,4 +1,4 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import authOperations from 'redux/auth/auth-operations';
 
 import { Div, Link, Name } from './AppBar.styled';
@@ -7,7 +7,7 @@ import Button from '@mui/material/Button';
 export const UserMenu = () => {
   const dispatch = useDispatch();
 
-  // const name = useSelector(state => state.auth.user.name);
+  const name = useSelector(state => state.auth.user.name);
 
   const handlerLogOut = e => {
     e.preventDefault();
@@ -17,7 +17,7 @@ export const UserMenu = () => {
   return (
     <Div>
       <Link to="contacts"> Contacts</Link>
-      <Name></Name>
+      <Name>{name}</Name>
       <div>
         <Button
           variant="contained"
