@@ -1,4 +1,4 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import authOperations from 'redux/auth/auth-operations';
 
 import { Div, Link, Name } from './AppBar.styled';
@@ -17,7 +17,7 @@ export const UserMenu = () => {
   return (
     <Div>
       <Link to="contacts"> Contacts</Link>
-      {/* <Name>{name}</Name> */}
+      <Name></Name>
       <div>
         <Button
           variant="contained"
