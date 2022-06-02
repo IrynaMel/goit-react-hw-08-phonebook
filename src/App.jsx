@@ -15,7 +15,8 @@ import AppBar from 'components/AppBar/AppBar';
 const LogInView = lazy(()=> import('./views/logInView'));
 const RegisterView = lazy(()=> import('./views/registerfView'));
 const ContactsView = lazy(()=> import('./views/contactsView'));
-const HomeView = lazy(()=> import('./views/homeView'))
+const HomeView = lazy(()=> import('./views/homeView'));
+const NotFoundView = lazy(()=> import('./views/notFoundView'))
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -34,7 +35,7 @@ export const App = () => {
            <Route path='login' element ={<PublicRoute>{<LogInView/>}</PublicRoute>}/>
               <Route path ='contacts' element={<PrivateRoute>{<ContactsView/>}</PrivateRoute>}/>
          </Route>
-         <Route path="*" element={<p>not found</p>} /> 
+         <Route path="*" element={<NotFoundView/>} /> 
        </Routes>
        </Suspense>
     </Container>

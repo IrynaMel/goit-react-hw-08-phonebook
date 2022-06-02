@@ -41,6 +41,7 @@ const LogInView = () => {
           type="email"
           name="email"
           value={email}
+          required
           onChange={handleChange}
         />
 
@@ -51,6 +52,7 @@ const LogInView = () => {
           type="password"
           name="password"
           value={password}
+          required
           onChange={handleChange}
         />
 

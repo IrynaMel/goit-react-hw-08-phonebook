@@ -10,7 +10,6 @@ export const UserMenu = () => {
   const name = useSelector(state => state.auth.user.name);
 
   const handlerLogOut = e => {
-    e.preventDefault();
     dispatch(authOperations.logOut());
   };
 

@@ -42,6 +42,7 @@ const RegisterView = () => {
           type="text"
           name="name"
           value={name}
+          required
           onChange={handleChange}
         />
         <TextField
@@ -51,6 +52,7 @@ const RegisterView = () => {
           type="email"
           name="email"
           value={email}
+          required
           onChange={handleChange}
         />
         <TextField
@@ -60,6 +62,7 @@ const RegisterView = () => {
           type="password"
           name="password"
           value={password}
+          required
           onChange={handleChange}
         />
         <Button variant="contained" color="secondary" type="submit">
