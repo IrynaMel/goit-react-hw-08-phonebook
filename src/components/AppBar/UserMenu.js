@@ -7,7 +7,7 @@ import Button from '@mui/material/Button';
 export const UserMenu = () => {
   const dispatch = useDispatch();
 
-  const name = useSelector(state => state.auth.user.name);
+  const name = useSelector(state => state.auth?.user.name);
 
   const handlerLogOut = e => {
     dispatch(authOperations.logOut());
