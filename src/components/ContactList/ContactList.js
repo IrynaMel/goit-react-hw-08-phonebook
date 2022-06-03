@@ -10,7 +10,7 @@ import { useEffect } from 'react';
 const ContactList = () => {
   const { data, isLoading, refetch } = useGetContactsQuery();
 
-  useEffect(() => refetch(), []);
+  useEffect(() => refetch(), [refetch]);
 
   const filter = useSelector(state => state.filter);
 
