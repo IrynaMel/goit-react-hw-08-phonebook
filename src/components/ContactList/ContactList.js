@@ -3,8 +3,21 @@ import { Li, Ul, P } from './ContactList.styled';
 import Button from 'components/Button/Button';
 // import { useGetContactsQuery } from 'redux/contacts/contactsSlice';
 import ClipLoader from 'react-spinners/ClipLoader';
+import { useSelector } from 'react-redux';
+import { useGetContactsQuery } from 'redux/contacts/contactsSlice';
+import { useEffect } from 'react';
 
-const ContactList = ({ data, isLoading, visible }) => {
+const ContactList = () => {
+  const { data, isLoading, refetch } = useGetContactsQuery();
+
+  useEffect(() => refetch(), []);
+
+  const filter = useSelector(state => state.filter);
+
+  const visible = data?.filter(contact =>
+    contact.name.toLowerCase().includes(filter)
+  );
+
   return (
     <div>
       {isLoading && <ClipLoader />}

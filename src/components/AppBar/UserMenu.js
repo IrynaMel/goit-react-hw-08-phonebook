@@ -1,6 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
 import authOperations from 'redux/auth/auth-operations';
-
 import { Div, Link, Name } from './AppBar.styled';
 import Button from '@mui/material/Button';
 
@@ -8,9 +7,12 @@ export const UserMenu = () => {
   const dispatch = useDispatch();
 
   const name = useSelector(state => state.auth);
+  let config = useSelector(state => state.contacts.config.refetchOnFocus);
 
   const handlerLogOut = e => {
     dispatch(authOperations.logOut());
+
+    console.log(config);
   };
 
   return (

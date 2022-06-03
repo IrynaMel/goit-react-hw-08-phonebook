@@ -1,22 +1,4 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-// import axios from 'axios';
-
-// const axiosBaseQuery =
-//   ({ baseUrl } = { baseUrl: '' }) =>
-//   async ({ url, method, data, params }) => {
-//     try {
-//       const result = await axios({ url: baseUrl + url, method, data, params })
-//       return { data: result.data }
-//     } catch (axiosError) {
-//       let err = axiosError
-//       return {
-//         error: {
-//           status: err.response?.status,
-//           data: err.response?.data || err.message,
-//         },
-//       }
-//     }
-//   }
 
 export const contactsApi = createApi({
   reducerPath: 'contacts',
@@ -24,7 +6,6 @@ export const contactsApi = createApi({
     baseUrl: 'https://connections-api.herokuapp.com',
     prepareHeaders: (headers, { getState }) => {
       const token = getState().auth.token;
-      // If we have a token set in state, let's assume that we should be passing it.
       if (token) {
         headers.set('authorization', `Bearer ${token}`);
       }
@@ -34,9 +15,15 @@ export const contactsApi = createApi({
   tagTypes: ['Contact'],
   endpoints: builder => ({
     getContacts: builder.query({
-      query: () => '/contacts',
-      providesTags: ['Contact'],
+      query: () => ({
+        url: '/contacts',
+      }),
+      providesTags: (result, error, arg) =>
+        result
+          ? [...result.map(({ id }) => ({ type: 'Contact', id })), 'Contact']
+          : ['Contact'],
     }),
+
     creatContact: builder.mutation({
       query: newContact => ({
         url: '/contacts',
