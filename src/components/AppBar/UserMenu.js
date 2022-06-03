@@ -1,24 +1,22 @@
 import { useDispatch, useSelector } from 'react-redux';
 import authOperations from 'redux/auth/auth-operations';
 import { Div, Link, Name } from './AppBar.styled';
+import { getUserName } from 'redux/auth/auth-slice';
 import Button from '@mui/material/Button';
 
 export const UserMenu = () => {
   const dispatch = useDispatch();
 
-  const name = useSelector(state => state.auth);
-  let config = useSelector(state => state.contacts.config.refetchOnFocus);
+  const name = useSelector(getUserName);
 
   const handlerLogOut = e => {
     dispatch(authOperations.logOut());
-
-    console.log(config);
   };
 
   return (
     <Div>
       <Link to="contacts"> Contacts</Link>
-      <Name>{name.user.name}</Name>
+      <Name>{name}</Name>
       <div>
         <Button
           variant="contained"

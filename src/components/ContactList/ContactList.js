@@ -1,7 +1,5 @@
-// import PropTypes from 'prop-types';
 import { Li, Ul, P } from './ContactList.styled';
 import Button from 'components/Button/Button';
-// import { useGetContactsQuery } from 'redux/contacts/contactsSlice';
 import ClipLoader from 'react-spinners/ClipLoader';
 import { useSelector } from 'react-redux';
 import { useGetContactsQuery } from 'redux/contacts/contactsSlice';
@@ -35,9 +33,5 @@ const ContactList = () => {
     </div>
   );
 };
-
-// ContactList.propTypes = {
-//   visible: PropTypes.array,
-// };
 
 export default ContactList;

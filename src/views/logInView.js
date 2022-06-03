@@ -3,7 +3,6 @@ import { useDispatch } from 'react-redux';
 import TextField from '@mui/material/TextField';
 import authOperations from '../redux/auth/auth-operations';
 import Button from '@mui/material/Button';
-// import { useGetContactsQuery } from 'redux/contacts/contactsSlice';
 
 const LogInView = () => {
   const dispatch = useDispatch();

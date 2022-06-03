@@ -34,3 +34,5 @@ export const authSlice = createSlice({
 });
 
 export default authSlice.reducer;
+
+export const getUserName = state => state.auth.user.name;
