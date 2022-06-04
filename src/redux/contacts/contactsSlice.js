@@ -18,10 +18,8 @@ export const contactsApi = createApi({
       query: () => ({
         url: '/contacts',
       }),
-      providesTags: (result, error, arg) =>
-        result
-          ? [...result.map(({ id }) => ({ type: 'Contact', id })), 'Contact']
-          : ['Contact'],
+      keepUnusedDataFor: 0,
+      providesTags: ['Contact'],
     }),
 
     creatContact: builder.mutation({

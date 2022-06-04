@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import TextField from '@mui/material/TextField';
-import authOperations from '../redux/auth/auth-operations';
+import { logIn } from '../redux/auth/auth-operations';
 import Button from '@mui/material/Button';
 
 const LogInView = () => {
@@ -23,8 +23,7 @@ const LogInView = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    dispatch(authOperations.logIn({ email, password }));
-
+    dispatch(logIn({ email, password }));
     setEmail('');
     setPassword('');
   };
@@ -39,6 +38,7 @@ const LogInView = () => {
           color="secondary"
           type="email"
           name="email"
+          placeholder="Enter your email"
           value={email}
           required
           onChange={handleChange}
@@ -50,6 +50,7 @@ const LogInView = () => {
           color="secondary"
           type="password"
           name="password"
+          placeholder="Enter your password"
           value={password}
           required
           onChange={handleChange}

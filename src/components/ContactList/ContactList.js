@@ -3,12 +3,9 @@ import Button from 'components/Button/Button';
 import ClipLoader from 'react-spinners/ClipLoader';
 import { useSelector } from 'react-redux';
 import { useGetContactsQuery } from 'redux/contacts/contactsSlice';
-import { useEffect } from 'react';
 
 const ContactList = () => {
-  const { data, isLoading, refetch } = useGetContactsQuery();
-
-  useEffect(() => refetch(), [refetch]);
+  const { data, isLoading } = useGetContactsQuery();
 
   const filter = useSelector(state => state.filter);
 

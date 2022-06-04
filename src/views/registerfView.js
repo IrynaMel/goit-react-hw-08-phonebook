@@ -41,6 +41,7 @@ const RegisterView = () => {
           color="secondary"
           type="text"
           name="name"
+          placeholder="Enter your name"
           value={name}
           required
           onChange={handleChange}
@@ -51,6 +52,7 @@ const RegisterView = () => {
           color="secondary"
           type="email"
           name="email"
+          placeholder="Enter your email"
           value={email}
           required
           onChange={handleChange}
@@ -61,6 +63,7 @@ const RegisterView = () => {
           color="secondary"
           type="password"
           name="password"
+          placeholder="Enter your password"
           value={password}
           required
           onChange={handleChange}
